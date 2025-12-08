@@ -1,0 +1,51 @@
+You are a senior UI designer + frontend engineer. Build a professional multi-page service section for my website.
+
+📌 Requirements
+1. On the home/services page, each service card must be clickable.
+2. Clicking a card should redirect to a dedicated detail page for that service.
+3. Create individual pages for each service (example: Web Development, AI Solutions, Cloud Services, UI/UX Design, etc.).
+4. Each service detail page must be visually premium, modern, and professional.
+
+🎨 Design + UI Requirements
+- Each service detail page must have:
+  • Full-width hero banner with relevant high-quality image
+  • Animated headline and sub-text
+  • Subtle fade-in / slide-up transitions for each section on scroll
+  • Modern color theme + gradient section backgrounds
+  • Icons, feature highlights, and service process steps
+  • "Why choose us" section with animated cards
+  • Testimonial block (optional)
+  • Call To Action at bottom with button → Contact/Booking form
+
+🎞️ Animation Requirements
+- Use smooth entrance animation on scroll (AOS, Framer Motion, GSAP, or CSS transitions)
+- Hero text must animate with fade + upward motion
+- Section blocks appear with staggered reveal animation
+- Buttons hover with scale + shadow expansion
+- Page should feel dynamic, not static
+
+📂 File Output Structure
+- services.html → main page with cards
+- service-webdev.html → page 1 (example)
+- service-ai.html → page 2
+- service-cloud.html → page 3
+- service-design.html → page 4
+(You may generate 3–6 sample services with consistent styling)
+
+🔗 Interaction
+- Clicking a card on services.html should land on the respective page
+- Each detail page should reuse a common navigation + footer
+
+📄 Deliverables in Output
+1. Complete responsive HTML + CSS + JS code
+2. Hero section with image banner for each service
+3. Animated sections: Overview, features, workflow, benefits, testimonials
+4. Professional typography + spacing + layout
+
+⚡ Additional Styling Instructions
+- Soft shadows, glass morphism or gradient overlays welcome
+- Avoid clutter, maintain premium spacing
+- Typography hierarchy must be clean
+- Use modern UI like Apple / Stripe / SaaS branding feel
+
+Return output as full working code with internal CSS + JS OR separate files.
