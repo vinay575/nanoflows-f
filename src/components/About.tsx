@@ -633,10 +633,10 @@ const About = () => {
                           />
                         </div>
                         <div className={`absolute bottom-0 left-0 right-0 p-3 sm:p-4 bg-transparent`}> 
-                          <h4 className={`font-orbitron font-bold text-sm sm:text-base mb-1 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+                          <h4 className={`font-orbitron font-bold text-sm sm:text-base mb-1 text-white`}>
                             {member.name}
                           </h4>
-                          <p className={`text-xs sm:text-sm mb-0 ${theme === 'dark' ? 'text-gray-100' : 'text-gray-900'}`}>
+                          <p className={`text-xs sm:text-sm mb-0 text-white`}>
                             {member.role}
                           </p>
                         </div>
