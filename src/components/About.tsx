@@ -606,37 +606,39 @@ const About = () => {
               ) : tabs[activeTab]?.type === 'team' ? (
                     // Team members with portfolio links - duplicated for seamless loop
                 <div className="overflow-x-auto pb-4 scrollbar-hide scroll-container w-full">
-                  <div className="flex gap-3 sm:gap-4 md:gap-6 animate-scroll">
+                  <div className="flex gap-3 sm:gap-4 md:gap-6 animate-scroll team-scroll">
                     {([...(tabs[activeTab]?.images || []), ...(tabs[activeTab]?.images || [])] as SectionImage[]).map((member: SectionImage, idx: number) => (
                       <div
                         key={idx}
-                        className={`relative group w-48 sm:w-56 rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 ${
+                        className={`relative group team-card w-48 sm:w-56 rounded-xl overflow-hidden transition-all duration-300 hover:scale-105 ${
                           theme === 'dark' ? 'bg-dark-lighter' : 'bg-white shadow-lg'
                         }`}
                       >
-                        <div className="aspect-square overflow-hidden">
+                        <div className="aspect-square overflow-hidden relative">
                           <img
                             src={member.url}
                             alt={member.name}
-                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
+                            style={{ objectPosition: '50% 30%' }}
                             loading="lazy"
                           />
+                          {/* bottom gradient overlay for text legibility */}
+                          <div
+                            aria-hidden="true"
+                            className={`absolute inset-0 pointer-events-none ${
+                              theme === 'dark'
+                                ? 'bg-gradient-to-t from-black/80 to-transparent'
+                                : 'bg-gradient-to-t from-black/60 to-transparent'
+                            }`}
+                          />
                         </div>
-                        <div className={`p-3 sm:p-4 ${theme === 'dark' ? 'bg-dark-card' : 'bg-white'}`}>
-                          <h4 className={`font-orbitron font-bold text-base sm:text-lg mb-1 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+                        <div className={`absolute bottom-0 left-0 right-0 p-3 sm:p-4 bg-transparent`}> 
+                          <h4 className={`font-orbitron font-bold text-sm sm:text-base mb-1 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
                             {member.name}
                           </h4>
-                          <p className={`text-xs sm:text-sm mb-2 sm:mb-3 ${theme === 'dark' ? 'text-gray-100' : 'text-gray-900'}`}>
+                          <p className={`text-xs sm:text-sm mb-0 ${theme === 'dark' ? 'text-gray-100' : 'text-gray-900'}`}>
                             {member.role}
                           </p>
-                          {/* <a
-                            href={member.portfolio}
-                            className={`inline-flex items-center gap-2 text-xs sm:text-sm font-semibold transition-colors ${
-                              theme === 'dark' ? 'text-electric-blue hover:text-electric-green' : 'text-accent-red hover:text-red-700'
-                            }`}
-                          >
-                            View Portfolio <ExternalLink size={12} />
-                          </a> */}
                         </div>
                       </div>
                     ))}
@@ -657,7 +659,8 @@ const About = () => {
                           <img
                             src={img.url}
                             alt={img.title}
-                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
+                            style={{ objectPosition: '50% 30%' }}
                             loading="lazy"
                           />
                         </div>

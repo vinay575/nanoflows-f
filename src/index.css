@@ -557,6 +557,40 @@ section {
   padding-bottom: clamp(1rem, 1vw, 1rem);
 }
 
+/* Precise root padding for industry pages
+   - Subtract 2px from previous Tailwind values (pt-28 = 7rem, lg:pt-36 = 9rem)
+   - Ensure mobile has explicit top spacing so content isn't cut off behind header */
+.industry-page {
+  padding-top: calc(7rem - 2px);
+}
+
+@media (min-width: 1024px) {
+  .industry-page {
+    /* reduced slightly to remove extra gap above hero */
+    padding-top: calc(8.5rem - 2px);
+  }
+}
+
+@media (max-width: 640px) {
+  /* give clearer top spacing on small screens (adjustable)
+     Increase more so fixed header (with top feature bar) doesn't overlap hero text */
+  .industry-page {
+    /* added extra 0.75rem (~12px) on top compared to previous value */
+    padding-top: calc(7rem + 1.25rem - 2px);
+  }
+}
+
+/* Team scrolling: disabled automatic blur — keep images sharp by default.
+   If you want selective blur later, we can toggle a `blurred` class per card. */
+.team-scroll .team-card:nth-child(odd) img {
+  filter: none;
+  transition: filter 300ms ease;
+}
+
+.team-scroll .team-card img {
+  display: block;
+}
+
 /* Masterclass page: reduce top/bottom spacing for images to 10% */
 .masterclass-page img {
   margin-top: 10%;

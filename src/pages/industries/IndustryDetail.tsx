@@ -1140,7 +1140,7 @@ const IndustryDetail = () => {
       }`}
     >
       <Header />
-      <main className="industry-page flex-1 pt-16 lg:pt-24 pb-10">
+      <main className="industry-page flex-1 pb-10">
         {renderHero()}
         {renderStats()}
         {renderServices()}
